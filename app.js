@@ -54,7 +54,7 @@ const math = {
         return x / y;
     },
     round: function (x) {
-        return (Math.round(x * 1000) / 1000); 
+        return (Math.round(x * 100000) / 100000); 
     },
     operate: function(x, y, op) {
         if (op === '+') {
