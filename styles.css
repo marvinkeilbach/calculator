@@ -1,28 +1,47 @@
-button {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+:root {
     font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: rgb(86,96,60);
+    background: -moz-linear-gradient(274deg, rgba(86,96,60,1) 0%, rgba(152,161,127,1) 38%, rgba(137,140,77,1) 74%, rgba(117,119,85,1) 100%);
+    background: -webkit-linear-gradient(274deg, rgba(86,96,60,1) 0%, rgba(152,161,127,1) 38%, rgba(137,140,77,1) 74%, rgba(117,119,85,1) 100%);
+    background: linear-gradient(274deg, rgba(86,96,60,1) 0%, rgba(152,161,127,1) 38%, rgba(137,140,77,1) 74%, rgba(117,119,85,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56603c",endColorstr="#757755",GradientType=1);
+}
+
+button {
+    font-weight: 500;
+    font-size: 32px;
     border: 1px solid rgb(134, 134, 134);
     border-radius: 10px;
     transition: 10ms;
+    background-color: rgb(219, 219, 219);
+    max-height: 100%;
 }
 
 button:hover {
     outline: none;
-    border: 2px solid rgba(43, 112, 122, 0.849);
+    border: 1px solid rgb(13, 44, 48);
 }
 
 button:focus {
     outline: none;
-    border: 1px solid rgb(57, 175, 116);
+    border: 1px solid rgb(189, 189, 189);
 }
 
 .container {
-    height: 800px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .calculator-body {
@@ -30,7 +49,7 @@ button:focus {
     height: 700px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr) 0.5fr;
     grid-template-areas: 
         "display . . ."
         "seven eight nine divide" 
@@ -40,108 +59,101 @@ button:focus {
         "equals . . . ";
     grid-gap: 1rem;
     align-content: center;
+    padding: 20px;
+    border: 5px solid rgba(150, 150, 150, 0.308);
+    border-bottom: 7px solid rgba(150, 150, 150, 0.308);
+    border-top: 3px solid rgba(150, 150, 150, 0.308);
+    border-radius: 20px;
+    background-color: rgb(207, 207, 207);
+    font-size: 1rem;
 }
 
-#zero {
-    grid-area: zero;
+.operator {
+    background-color: rgb(196, 196, 196);
+    font-weight: 600;
 }
 
-#one {
-    grid-area: one;
+.hints {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#two {
-    grid-area: two;
+.heading {
+    margin: 10px auto;
 }
 
-#three {
-    grid-area: three;
-}
-
-#four {
-    grid-area: four;
-}
-
-#five {
-    grid-area: five;
-}
-
-#six {
-    grid-area: six;
-}
-
-#seven {
-    grid-area: seven;
-}
-
-#eight {
-    grid-area: eight;
-}
-
-#nine {
-    grid-area: nine;
-}
-
-#add {
-    grid-area: add;
-}
-
-#subtract {
-    grid-area: subtract;
-}
-
-#multiply {
-    grid-area: multiply;
-}
-
-#divide {
-    grid-area: divide;
-}
-
-#equals {
-    grid-area: equals;
-    grid-column: 1 / 5;
-    height: 50%;
-}
-
-#decimal {
-    grid-area: decimal;
-}
-
-#clear {
-    grid-area: clear;
-}
-
-#display {
+.display {
     grid-area: display;
     grid-column: 1 / 5;
     display: flex;
     justify-content: center;
-    background-color: rgb(85, 101, 122);
+    max-height: 100%;
+    background: rgb(112,127,148);
+    background: -moz-radial-gradient(circle, rgba(112,127,148,1) 0%, rgba(85,101,122,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(112,127,148,1) 0%, rgba(85,101,122,1) 100%);
+    background: radial-gradient(circle, rgba(112,127,148,1) 0%, rgba(85,101,122,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#707f94",endColorstr="#55657a",GradientType=1);
     color: white;
+    border: 1px solid rgb(90, 90, 90);
     border-radius: 6px;
 }
 
-#display>p {
+#displayContent {
     align-self: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 30px;
+    font-size: 1rem;
     font-weight: 300;
-    letter-spacing: 0.8rem;
+    letter-spacing: 0.01rem;
+}
+
+#keyboard-hint {
+    font-size: 0.5rem;
+}
+
+/* Grid positioning for all buttons */
+#zero {grid-area: zero;}
+#one {grid-area: one;}
+#two {grid-area: two;}
+#three {grid-area: three;}
+#four {grid-area: four;}
+#five {grid-area: five;}
+#six {grid-area: six;}
+#seven {grid-area: seven;}
+#eight {grid-area: eight;}
+#nine {grid-area: nine;}
+#add {grid-area: add;}
+#subtract {grid-area: subtract;}
+#multiply {grid-area: multiply;}
+#divide {grid-area: divide;}
+#decimal {grid-area: decimal;}
+
+#equals {
+    grid-area: equals;
+    grid-column: 1/5;
+    background-color: rgb(196, 196, 196);
+}
+
+#clear {
+    grid-area: clear;
+    background-color: rgb(196, 196, 196);
+    color: rgb(156, 28, 28);
 }
 
 @media (max-width: 700px) {
     .container {
-        margin-top: 70px;
+        margin-top: 30px;
+        height: 500px;
     }
     .calculator-body {
         width: 400px;
         height: 500px;
     }
-    button {
+    :root {
         font-size: 20px;
     }
-    #equals {
-        height: 75%;
+    #displayContent {
+        font-size: 20px;
     }
 }
