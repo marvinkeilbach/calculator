@@ -1,0 +1,147 @@
+button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 10px;
+    transition: 10ms;
+}
+
+button:hover {
+    outline: none;
+    border: 2px solid rgba(43, 112, 122, 0.849);
+}
+
+button:focus {
+    outline: none;
+    border: 1px solid rgb(57, 175, 116);
+}
+
+.container {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.calculator-body {
+    width: 600px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+        "display . . ."
+        "seven eight nine divide" 
+        "four five six multiply"
+        "one two three subtract"
+        "zero decimal clear add"
+        "equals . . . ";
+    grid-gap: 1rem;
+    align-content: center;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#add {
+    grid-area: add;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#equals {
+    grid-area: equals;
+    grid-column: 1 / 5;
+    height: 50%;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+#display {
+    grid-area: display;
+    grid-column: 1 / 5;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(85, 101, 122);
+    color: white;
+    border-radius: 6px;
+}
+
+#display>p {
+    align-self: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 0.8rem;
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin-top: 70px;
+    }
+    .calculator-body {
+        width: 400px;
+        height: 500px;
+    }
+    button {
+        font-size: 20px;
+    }
+    #equals {
+        height: 75%;
+    }
+}
